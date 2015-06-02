@@ -11,17 +11,20 @@ describe('Contact', function() {
     expect(sherlock.fullName()).to.equal("Sherlock Holmes");
   });
 
-  // it("adds an address to a contact". function() {
-  //   var sherlock = new Contact("Sherlock", "Holmes");
-  // });
+  it("adds an address to a contact", function() {
+    var sherlock = new Contact("Sherlock", "Holmes");
+    var testAddress = new Address('123 main st', 'Portland', 'OR');
+    sherlock.addresses.push(testAddress);
+    expect(sherlock.addresses).to.eql([testAddress]);
+  });
 });
 
 describe('Address', function() {
   it('creates a new address', function () {
-    var newAddress = new Address('123 main st', 'Portland', 'OR')
-    expect(newAddress.street).to.equal('123 main st');
-    expect(newAddress.city).to.equal('Portland');
-    expect(newAddress.state).to.equal('OR');
+    var testAddress = new Address('123 main st', 'Portland', 'OR')
+    expect(testAddress.street).to.equal('123 main st');
+    expect(testAddress.city).to.equal('Portland');
+    expect(testAddress.state).to.equal('OR');
   });
 
   it('adds the fullAddress method to all addresses', function () {
