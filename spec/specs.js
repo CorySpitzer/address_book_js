@@ -5,4 +5,9 @@ describe('Contact', function() {
     expect(rita.lastName).to.equal('Moreno');
     expect(rita.addresses).to.eql([]);
   });
+
+  it("adds the fullName method to all contacts", function() {
+    var sherlock = new Contact("Sherlock", "Holmes");
+    expect(sherlock.fullName()).to.equal("Sherlock Holmes");
+  });
 });
